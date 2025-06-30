@@ -156,8 +156,3 @@ git push origin master
 ```
 
 ---
-
-## 🧑‍💻 Maintainer
-
-- **Author**: Nizarudeen
-- **Organization**: Chat360
