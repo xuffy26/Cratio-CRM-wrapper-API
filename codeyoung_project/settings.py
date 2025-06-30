@@ -25,7 +25,11 @@ SECRET_KEY = 'django-insecure-wo)l&-!kv@n(z-(9vhd31q_2y2qb657xgky0&-#n)bq8drfx3z
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'cratio-crm-wrapper-api.onrender.com',
+    '127.0.01',
+    'localhost'
+]
 
 
 # Application definition
