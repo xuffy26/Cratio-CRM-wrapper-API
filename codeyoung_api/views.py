@@ -11,13 +11,13 @@ class CodeyoungLeadAPIView(APIView):
         try:
             # 1. Get JSON body from POST request
             lead_data = request.data
-            print("🟡 Incoming request data:", lead_data)
+            print("Incoming request data:", lead_data)
 
             # 2. Wrap it inside the required Cratio format
             payload = {
                 "records": [lead_data]
             }
-            print("🟡 Payload to Cratio:", payload)
+            print("Payload to Cratio:", payload)
 
             # 3. Cratio API URL with API key
             codeyoung_url = (
@@ -32,7 +32,7 @@ class CodeyoungLeadAPIView(APIView):
                 json=payload,
                 headers={"Content-Type": "application/json"}
             )
-            print("🟢 Cratio Response (raw text):", response.text)
+            print("Cratio Response (raw text):", response.text)
 
             # 5. Return Cratio's response to client
             return Response({
@@ -41,5 +41,5 @@ class CodeyoungLeadAPIView(APIView):
             }, status=response.status_code)
 
         except Exception as e:
-            logger.error(f"❌ Error in codeyoung Lead Submission: {str(e)}")
+            logger.error(f" Error in codeyoung Lead Submission: {str(e)}")
             return Response({"error": str(e)}, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
